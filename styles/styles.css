@@ -4,6 +4,10 @@ html, body {
 }
 
 
+.outer-container {
+	min-height:100%;
+	background-image: linear-gradient(blue, red);
+}
 
 .grad {
 	background-image: linear-gradient(red, yellow);
@@ -15,10 +19,6 @@ html, body {
 	background-size: cover;
 }
 
-.outer-container {
-	min-height:100%;
-	background-color: blue;
-}
 
 .date-containter {
 
