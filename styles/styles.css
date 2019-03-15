@@ -1,19 +1,37 @@
-body {
-	text-align: center;
-	background-color: #f0e8c5;
+html, body {
+	height: 100%;
+	margin: 0;
 }
 
-div {
-  margin-top: 15px;
+
+
+.grad {
+	background-image: linear-gradient(red, yellow);
+	height: 100%;
+	width: 100%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.outer-container {
+	min-height:100%;
+	background-color: blue;
+}
+
+.date-containter {
+
 }
 
 .image-section {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: space-around;
 }
 
-.section-style {
-  margin-right: 25px;
-  margin-left: 25px;
-  background-color: white;
-}
+
+/*.section-style {
+	margin-right: 1px;
+	margin-left: 1px;
+	background-color: white;
+}*/
