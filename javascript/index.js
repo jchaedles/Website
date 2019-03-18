@@ -1,1 +1,3 @@
-document.getElementById('date').innerHTML = new Date().toDateString();
+"use strict";
+let result = confirm("Kickback cancelled?");
+alert(result);
