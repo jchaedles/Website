@@ -1,14 +1,23 @@
 "use strict";
 let user = {
-  name: "Joe",
-  age: 18,
-  isDope: true
+  name: "J Money",
+  age: 100,
+  isCool: "yes",
+  printKeys() {
+    for(let key in this)
+    {
+      if(typeof this[key] !== 'function')
+      {
+        alert(key + ":  " + this[key]);
+      }
+      else
+      {
+        alert("Function: " + key);
+      }
+    }
+  }
 };
 
-for(let key in user)
-{
-  alert(key);
-  alert(user[key]);
-}
+user.printKeys();
+alert("what is 'this': "  + this);
 
-alert(user.name);
