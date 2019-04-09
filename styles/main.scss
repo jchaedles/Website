@@ -1,9 +1,52 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+$primarybg-color: #333;
+$font-color: #008B8B;
+$brightpup: #D8BFD8;
 
-body {
-  #top-row {
-    background-color: $primary-color;
+html, body {
+  height: 1200px;
+
+  .container-fluid {
+    height: 100%;
+    border: solid red 2px;
+
+    #top-row {
+      background-color: $primarybg-color;
+      color: $font-color;
+      height: 40%;
+      width: 100%;
+
+      .d-flex {
+        border: solid black 2px;
+      }
+
+      #logo {
+        background-image: url(/images/logo_template.jpg);
+      }
+    }  
+    #bottom-row {
+      background-color: blue;
+      color: $font-color;
+    }
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
 }
 
