@@ -18,6 +18,20 @@ let user = {
   }
 };
 
-user.printKeys();
-alert("what is 'this': "  + this);
+//user.printKeys();
+let result = function() {
+  alert("function!");
+};
 
+let arrows = x => {
+  alert("arroooows");
+  alert("yeet");
+  let infunc = () => {
+    alert("insidefuncy");
+  };
+  infunc();
+};
+//arrows();
+//result();
+//alert("what is 'this': "  + this);
+document.writeln("hi there");
