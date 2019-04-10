@@ -3,20 +3,6 @@ $primarybg-color: #333;
 $font-color: #008B8B;
 $brightpup: #D8BFD8;
 $logo_height: 480px;
-@media only screen and (max-width: 768px){
-  body{
-    .container-fluid {
-      background-image: url("/images/puta.jpg");
-      height: 100%;
-      #top-row {
-        display:none;
-      }
-       
-    }
-  }
-
-}
-
 html, body {
   height: 1200px;
 
@@ -31,6 +17,16 @@ html, body {
       width: 100%;
 
       /*cover up left side with image*/
+      @media screen and (max-width: 32em){
+        #left {
+          display:none;
+        }
+      }
+      @media screen and (min-width: 32.1em){
+        #left {
+          background-color: tan;
+        }
+      }
       /*right border*/
       #right {
       }

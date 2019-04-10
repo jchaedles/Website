@@ -1,3 +1,12 @@
+@media only screen and (max-width: 768px) {
+  body .container-fluid {
+    background-image: url("/images/puta.jpg");
+    height: 100%;
+  }
+  body .container-fluid #top-row {
+    display: none;
+  }
+}
 html, body {
   height: 1200px;
 }
@@ -10,9 +19,8 @@ html .container-fluid #top-row, body .container-fluid #top-row {
   color: #008B8B;
   height: 40%;
   width: 100%;
-}
-html .container-fluid #top-row .d-flex, body .container-fluid #top-row .d-flex {
-  /*border: solid black 2px;*/
+  /*cover up left side with image*/
+  /*right border*/
 }
 html .container-fluid #top-row #logo, body .container-fluid #top-row #logo {
   margin: 0;
@@ -23,28 +31,8 @@ html .container-fluid #top-row #logo, body .container-fluid #top-row #logo {
   height: 480px;
 }
 html #bottom-row, body #bottom-row {
-  background-color: blue;
+  background-color: #f5f5f5;
   color: #008B8B;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 /*# sourceMappingURL=main.css.map */
