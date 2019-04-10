@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+  display-template-columns: 100px 100px 100px;
+  grid-gap: 20px;
+}
+
+/*# sourceMappingURL=maid_grid.css.map */
