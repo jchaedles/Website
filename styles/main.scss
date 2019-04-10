@@ -5,13 +5,18 @@ $brightpup: #D8BFD8;
 $logo_height: 480px;
 @media only screen and (max-width: 768px){
   body{
-    .container-fluid {
+    .mobile{
+
       background-image: url("/images/puta.jpg");
+      margin: 0;
+      background-size: contain;
       height: 100%;
+    }
+    .container-fluid {
       #top-row {
         display:none;
       }
-       
+
     }
   }
 
@@ -23,24 +28,26 @@ html, body {
   .container-fluid {
     height: 100%;
     /* border: solid red 2px; */
-    
-    #top-row {
-      /*background-color: $primarybg-color;*/
-      color: $font-color;
-      height: 40%;
-      width: 100%;
 
-      /*cover up left side with image*/
-      /*right border*/
-      #right {
-      }
-      #logo {
-        margin: 0;
-        background-position: center;
-        background-size: cover;
-        background-image: url("/images/montain_logo.jpg");
+    @media only sceen and (min-size: 769px){
+      #top-row {
+        /*background-color: $primarybg-color;*/
+        color: $font-color;
+        height: 40%;
         width: 100%;
-        height: $logo_height; 
+
+        /*cover up left side with image*/
+        /*right border*/
+        #right {
+        }
+        #logo {
+          margin: 0;
+          background-position: center;
+          background-size: cover;
+          background-image: url("/images/montain_logo.jpg");
+          width: 100%;
+          height: $logo_height; 
+        }
       }
     }
   }  
