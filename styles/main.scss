@@ -5,13 +5,10 @@ $brightpup: #D8BFD8;
 $logo_height: 480px;
 @media only screen and (max-width: 768px){
   body{
-    .mobile{
-
       background-image: url("/images/puta.jpg");
       margin: 0;
       background-size: contain;
       height: 100%;
-    }
     .container-fluid {
       #top-row {
         display:none;

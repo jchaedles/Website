@@ -1,5 +1,5 @@
 @media only screen and (max-width: 768px) {
-  body .mobile {
+  body {
     background-image: url("/images/puta.jpg");
     margin: 0;
     background-size: contain;
