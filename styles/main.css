@@ -1,40 +1,49 @@
 html, body {
   height: 1200px;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
 }
 html .container-fluid, body .container-fluid {
   height: 100%;
-  border: solid red 2px;
+  /* border: solid red 2px; */
 }
 html .container-fluid #top-row, body .container-fluid #top-row {
-  background-color: #333;
+  /*background-color: $primarybg-color;*/
   color: #008B8B;
   height: 40%;
   width: 100%;
 }
 html .container-fluid #top-row .d-flex, body .container-fluid #top-row .d-flex {
-  border: solid black 2px;
+  /*border: solid black 2px;*/
 }
 html .container-fluid #top-row #logo, body .container-fluid #top-row #logo {
-  background-image: url(/images/logo_template.jpg);
+  margin: 0;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/images/montain_logo.jpg");
+  width: 100%;
+  height: 480px;
 }
-html .container-fluid #bottom-row, body .container-fluid #bottom-row {
+html #bottom-row, body #bottom-row {
   background-color: blue;
   color: #008B8B;
 }
-html ::-webkit-scrollbar, body ::-webkit-scrollbar {
+
+/* width */
+::-webkit-scrollbar {
   width: 10px;
 }
-html ::-webkit-scrollbar-track, body ::-webkit-scrollbar-track {
+
+/* Track */
+::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-html ::-webkit-scrollbar-thumb, body ::-webkit-scrollbar-thumb {
+
+/* Handle */
+::-webkit-scrollbar-thumb {
   background: #888;
 }
-html ::-webkit-scrollbar-thumb:hover, body ::-webkit-scrollbar-thumb:hover {
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
