@@ -1,0 +1,43 @@
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url("/images/puta.jpg");
+    margin: 0;
+    background-size: contain;
+    height: 100%;
+  }
+  body .container-fluid #top-row {
+    display: none;
+  }
+}
+@media only screen and (min-width: 769px) {
+  html, body {
+    height: 1200px;
+  }
+  html .container-fluid, body .container-fluid {
+    height: 100%;
+    /* border: solid red 2px; */
+  }
+  html .container-fluid #top-row, body .container-fluid #top-row {
+    /*background-color: $primarybg-color;*/
+    color: #008B8B;
+    height: 40%;
+    width: 100%;
+    /*cover up left side with image*/
+    /*right border*/
+  }
+  html .container-fluid #top-row #logo, body .container-fluid #top-row #logo {
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/montain_logo.jpg");
+    width: 100%;
+    height: 480px;
+  }
+
+  #bottom-row {
+    background-color: #f5f5f5;
+    color: #008B8B;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
