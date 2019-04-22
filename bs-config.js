@@ -14,7 +14,7 @@
  */
 module.exports = {
     "ui": {
-        "port": 3001
+        "port": 8080
     },
     "files": false,
     "watchEvents": [
@@ -48,7 +48,7 @@ module.exports = {
     "logSnippet": true,
     "rewriteRules": [],
     "open": "local",
-    "browser": "firefox",
+    "browser": "default",
     "cors": false,
     "xip": false,
     "hostnameSuffix": false,

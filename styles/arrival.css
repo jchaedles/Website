@@ -5,13 +5,39 @@
 html, body {
   box-sizing: border-box;
   margin: 0;
-  position: fixed;
+  width: 100%;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+blockquote {
+  font-family: "Indie Flower", cursive;
+  justify-self: center;
+  transform: translate(20px, -170px);
+  letter-spacing: 2px;
+  align-self: center;
+  font-size: 3.5em;
+  color: white;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.overlay {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-gap: 5px;
+  grid-template-rows: repeat(auto-fill, 100px);
   grid-auto-flow: dense;
   height: 100vh;
   width: 100vw;
@@ -28,6 +54,28 @@ html, body {
   height: 100%;
   object-fit: cover;
 }
+.item.doggo-sun {
+  grid-row: 7/span 2;
+}
+.item.doggo-confused {
+  grid-column: 1/span 1;
+}
+.item.doggo-white {
+  grid-column: 1/2;
+  grid-row: 5/span 4;
+}
+.item.doggo-top {
+  grid-column: 1/span 4;
+  grid-row: 1/span 3;
+}
+.item.doggo-shake {
+  grid-column: 4/span 1;
+  grid-row: 4/7;
+}
+.item.doggo-brown {
+  grid-column: 2/4;
+  grid-row: 4/span 5;
+}
 .item.v2 {
   grid-row: span 2;
 }
@@ -37,6 +85,12 @@ html, body {
 .item.v4 {
   grid-row: span 4;
 }
+.item.v5 {
+  grid-row: span 5;
+}
+.item.v6 {
+  grid-row: span 6;
+}
 .item.h2 {
   grid-column: span 2;
 }
@@ -45,6 +99,12 @@ html, body {
 }
 .item.h4 {
   grid-column: span 4;
+}
+.item.h5 {
+  grid-column: span 5;
+}
+.item.h6 {
+  grid-column: span 6;
 }
 
 /*# sourceMappingURL=arrival.css.map */
