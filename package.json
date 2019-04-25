@@ -1,0 +1,21 @@
+{
+  "name": "joes-package",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchaedles/Website.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jchaedles/Website/issues"
+  },
+  "homepage": "https://github.com/jchaedles/Website#readme",
+  "dependencies": {}
+}
