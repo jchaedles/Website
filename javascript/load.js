@@ -19,6 +19,10 @@ class ImageLoader{
 		this.img.style.animation = 'fadeIn 1s linear normal';
 	}
 }
+function isMobileDevice() {
+	return (typeof window.orientation !== "undefined") 
+	|| (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
 function imgLoaded(imgElement){
 	return imgElement.complete && imgElement.naturalHeight !== 0;
 }
@@ -33,43 +37,52 @@ var images = document.getElementsByTagName('img');
 var spinner = document.querySelector(".loader");
 var overlay = document.querySelector(".overlay");
 var overlayBlckQuotes = document.getElementsByTagName("blockquote");
-overlayBlckQuotes[0].style.visibility = 'hidden';
-//hide images, add them to the image loader
-for(var img of images){
-	var imgL = new ImageLoader(img, imgLoaded(img));
-	console.log(imgL.loaded);
-	imageLoaders.push(imgL);
-	imgL.hide();
-}
-var done = false;
-//check if all images are loaded after 1 second
-setTimeout(function(){
-	for(var i = 1; i < imageLoaders.length; i++){
-		console.log("loaded? " + i + ": " + imageLoaders[i] + "\n" +  imageLoaders[i].isLoaded);
-		imageLoaders[0] = imageLoaders[i].isLoaded;
-	}	
-	done = true;
-}, 1000);
 
-//remove spinner
-setTimeout(function(){
-	console.log("done?\n" + done);
-	if(imageLoaders[0]){
-		console.log('imgL' + typeof imgL);
-		spinner.style.animation = 'goaway 1s linear forwards';
-
-		
-
+/*mobile check*/
+if((window.screen.width > 480)){
+	console.log("NOT MOBILE");
+	overlayBlckQuotes[0].style.visibility = 'hidden';
+	//hide images, add them to the image loader
+	for(var img of images){
+		var imgL = new ImageLoader(img, imgLoaded(img));
+		console.log(imgL.loaded);
+		imageLoaders.push(imgL);
+		imgL.hide();
 	}
-}, 1011);
+	var done = false;
+	//check if all images are loaded after 1 second
+	setTimeout(function(){
+		for(var i = 1; i < imageLoaders.length; i++){
+			console.log("loaded? " + i + ": " + imageLoaders[i] + "\n" +  imageLoaders[i].isLoaded);
+			imageLoaders[0] = imageLoaders[i].isLoaded;
+		}	
+		done = true;
+	}, 1000);
 
-setTimeout(function(){
-	for(var i = 1; i < imageLoaders.length; i++){
+	//remove spinner
+	setTimeout(function(){
+		console.log("done?\n" + done);
+		if(imageLoaders[0]){
+			console.log('imgL' + typeof imgL);
+			spinner.style.animation = 'goaway 1s linear forwards';
+
+			
+
+		}
+	}, 1011);
+
+	setTimeout(function(){
+		for(var i = 1; i < imageLoaders.length; i++){
 			imageLoaders[i].show();
 		}
-	overlayBlckQuotes[0].style.visibility = 'visible';
-	overlayBlckQuotes[0].style.animation = 'fadeIn 1.5s linear forwards';
-}, 2021);
+		overlayBlckQuotes[0].style.visibility = 'visible';
+		overlayBlckQuotes[0].style.animation = 'fadeIn 1.5s linear forwards';
+	}, 2021);
+}
+else{
+	//is mobile
+	console.log("mobile");
+}
 //load the 
 // while(!done){
 	

@@ -1,0 +1,79 @@
+*, ::before, ::after{
+	box-sizing: border-box;
+}
+
+body, html{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+}
+
+
+/****Navigation***/
+.navigation-bar{
+	position: fixed;
+	height: auto;
+	z-index: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-list{
+	position: relative;
+	top: -16px;
+	padding: 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+	list-style: none;
+	width: 100vw;
+	li{
+		width: 100%;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		background: black;
+		a{
+			font-family: "Indie Flower", cursive;
+			color:white;
+			align-self: center;
+		}
+	}
+}
+
+/**doggo quote**/
+.doggo{
+	position: relative;
+	top: 28px;
+	display: grid;
+	// background: black;
+	background-image: radial-gradient(ellipse at bottom, black, transparent);
+	color: white;
+	grid-template-columns: repeat(3, 1fr);
+	h1{
+		font-family: "Indie Flower", cursive;
+		grid-column: 2/3;
+	}
+}
+
+/*****Gallery****/
+.gallery{
+
+	position: relative;
+	top: 28px;
+	height: 100%;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: repeat(3, 1fr);
+	img{
+		width: 50vw;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+
+
