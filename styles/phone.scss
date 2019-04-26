@@ -1,0 +1,31 @@
+$gridCols: 12;
+
+html, body{
+	box-sizing: border-box;
+}
+
+nav{
+	position: absolute;
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: auto;
+	justify-content: start;
+
+	.nav{
+		display: grid;
+		justify-content: start;
+		align-self: end;
+	}
+}
+.side-bar{
+}
+
+
+.gallery{
+
+}
+
+.overlay{
+
+}

@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proffesionalism Redefined</title>
-    <link rel="stylesheet" href="styles/arrival.css">
+    <link rel="stylesheet" href="styles/arrival.css" media="only screen and (min-width: 481px)">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" media="screen and (max-device-width: 480px)" href="styles/phone.css" />
 </head>
 <body>
-    <div class="loader hidden"></div> 
+    <div class="load-wrap">
+    <div class="loader"></div> 
+    </div>
     <!-- to do: get that loader workin with js idk -->
     <!-- nav -->
     <nav class="side-bar">
         <a class="home-nav nav" href="/">
-
             <ul>Home</ul>
         </a>
         <a class="Find-nav nav" href="">
@@ -25,17 +27,17 @@
             <ul>About Us</ul>
         </a>
         <ul>
-            <a href="https://facebook.com">
+            <a href="https://facebook.com" class="facebook-nav nav">
               <i class="fab fa-facebook-f"></i>
           </a>
       </ul>
       <ul>
-          <a href="http://twitter.com">
+          <a href="http://twitter.com" class="twitter-nav nav">
             <i class="fab fa-twitter-square"></i>
         </a>
     </ul>
     <ul>
-        <a href="instagram.com">
+        <a href="instagram.com" class="ig-nav nav">
             <i class="fab fa-instagram"></i>
         </a>
     </ul>
@@ -70,6 +72,6 @@
 
 <!-- scripts  -->
 <!--   <script src="javascript/arrival.js"></script> -->
-<!-- <script src="javascript/load.js"></script> -->
+<script src="javascript/load.js"></script>
 </body>
 </html>
