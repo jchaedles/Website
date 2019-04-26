@@ -21,25 +21,36 @@ body, html{
 
 .nav-list{
 	position: relative;
-	top: -16px;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	height: auto;
 	padding: 0px;
+	width: 100vw;
+
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+
+
 	list-style: none;
-	width: 100vw;
 	li{
 		width: 100%;
-		height: 35px;
+		height: auto;
+
 		display: flex;
 		justify-content: center;
 		align-self: center;
-		background: black;
+
+		background: #000321;
 		a{
 			font-family: "Indie Flower", cursive;
-			color:white;
+			// color:white;
+			color: #ffffff;
 			align-self: center;
+
 		}
 	}
 }
@@ -47,14 +58,25 @@ body, html{
 /**doggo quote**/
 .doggo{
 	position: relative;
-	top: 28px;
+	top: 35px;
+
+
+	height: auto;
+	width: 100%;
 	display: grid;
-	// background: black;
-	background-image: radial-gradient(ellipse at bottom, black, transparent);
+	// background-image: radial-gradient(ellipse at top, black, transparent),
+					  // radial-gradient(ellipse at bottom, black, transparent);		
+	background: linear-gradient(#000321, #6b4949);
 	color: white;
 	grid-template-columns: repeat(3, 1fr);
 	h1{
+	position: relative;
+	top: -10px;
+	left: 15px;
+	margin-top: 0;
+	margin-bottom: 0;
 		font-family: "Indie Flower", cursive;
+		letter-spacing: 2px;
 		grid-column: 2/3;
 	}
 }
@@ -63,15 +85,18 @@ body, html{
 .gallery{
 
 	position: relative;
-	top: 28px;
+	top: 35px;
 	height: 100%;
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(3, 1fr);
 	img{
 		width: 50vw;
 		height: 100%;
 		object-fit: cover;
+	}
+	.doggo-upsidedown{
+		// object-fit: 
 	}
 }
 
