@@ -1,0 +1,30 @@
+body{
+	padding: 0 0;
+	margin: 0 0;
+	display: grid;
+	justify-content: start;
+	box-sizing: border-box;
+	width: 100vw;
+	background: powderblue;
+}
+
+
+.img-gallery{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-rows: 300px;
+	grid-gap: 5px;
+	img{
+		grid-column: span 1;
+        grid-row: 1 / -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+	}
+}
+
+button{
+	width: auto;
+	visibility: hidden;
+	justify-self: center;
+}

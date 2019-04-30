@@ -86,7 +86,7 @@ nav{
         width: 100%;
     }
 }
-@media only screen and (min-width: 481px) and (max-width: 1210px){
+@media only screen and (max-width: 1210px){
     .overlay{
         position: absolute;
         display: grid;
@@ -135,6 +135,30 @@ nav{
 
 }
 
+.box-shadow-menu{
+    position: relative;
+    padding-left: 1.25em;
+    background: transparent;
+    color: white;
+    font-size: 1.1em;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: black;
+  box-shadow: 
+  0 0.25em 0 0 black,
+  0 0.5em 0 0 black;
+}
+
 .load-wrap{
     position: absolute;
     display: flex;
@@ -146,6 +170,7 @@ nav{
 }
 
 .loader{
+    visibility: hidden;
     margin: auto;
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -154,10 +179,39 @@ nav{
     height: 120px;
     animation: spin 2s linear infinite;
 
+    -webkit-animation: spin 4s linear infinite;
+
+}
+
+.fade-out{
+    -webkit-animation-name: fadeout;
+    -webkit-animation-iteration-count: initial;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-duration: 2000ms;
+
+
+    animation-name: fadeout;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+    animation-duration: 2000ms;
+    
+}
+
+.fade-in{
+    animation-name: fadeIn;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+    animation-duration: 800ms;
+}
+/*Animations**/
+/***************/
+@keyframes fadeout{
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 @keyframes goaway {
     0% { opacity: 1; }
@@ -171,6 +225,8 @@ nav{
     0% { opacity: 0; }
     100% { opacity: 0.9; }   
 }
+
+/*gallery picture crap*/
 .item{
     margin: 0;
     padding: 0;

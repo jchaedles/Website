@@ -35,6 +35,7 @@ function showImages(){
 var imageLoaders = [true]; 
 var images = document.getElementsByTagName('img');
 var spinner = document.querySelector(".loader");
+spinner.style.visibility = 'visible';
 var overlay = document.querySelector(".overlay");
 var overlayBlckQuotes = document.getElementsByTagName("blockquote");
 
@@ -45,7 +46,6 @@ if((window.screen.width > 480)){
 	//hide images, add them to the image loader
 	for(var img of images){
 		var imgL = new ImageLoader(img, imgLoaded(img));
-		console.log(imgL.loaded);
 		imageLoaders.push(imgL);
 		imgL.hide();
 	}
@@ -63,7 +63,6 @@ if((window.screen.width > 480)){
 	setTimeout(function(){
 		console.log("done?\n" + done);
 		if(imageLoaders[0]){
-			console.log('imgL' + typeof imgL);
 			spinner.style.animation = 'goaway 1s linear forwards';
 
 			
@@ -89,7 +88,7 @@ else{
 // }
 //skip first element, indicates if all files are loaded or not
 // }
-console.log("yeet");
+console.log("yeet end");
 
 //hide files
 // for(var i = 0; i < images.length; i++){
