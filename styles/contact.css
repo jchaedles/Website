@@ -1,0 +1,55 @@
+body {
+  box-sizing: border-box;
+  margin: 0 0;
+  height: 100vh;
+}
+
+.hero-dog {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  background-image: url("/images/gallery/shydoggo.jpg");
+  background-repeat: no-repeat;
+  background-color: powderblue;
+  background-position: center;
+  background-size: cover;
+  height: 1100px;
+}
+.hero-dog .main-nav {
+  grid-column: 1/-1;
+}
+.hero-dog .main-nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+.hero-dog h1 {
+  align-self: center;
+}
+.hero-dog .gmaps {
+  grid-column: 2/6;
+  grid-row: 2/3;
+  height: 300px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.hero-dog .links {
+  display: grid;
+  grid-row-start: 7;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 200px;
+}
+.hero-dog .links ul {
+  grid-row: span 1/9;
+}
+.hero-dog blockquote {
+  font-size: 1.5em;
+  grid-column: 3/5;
+  grid-row: 5/6;
+}
+
+.center {
+  align-self: center;
+}
+
+/*# sourceMappingURL=contact.css.map */
