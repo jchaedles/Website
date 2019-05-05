@@ -1,3 +1,7 @@
+* {
+  box-sizing: inherit;
+}
+
 body, html {
   padding: 0 0;
   margin: 0 0;
@@ -22,13 +26,20 @@ body, html {
   height: 100%;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: minmax(10px, 80px) auto 200px 200px repeat(10, auto);
+  grid-template-columns: minmax(10px, 700px) auto 200px 200px repeat(10, auto);
   grid-template-rows: 100px repeat(auto-fill, minmax(100px, 1fr));
+}
+
+canvas {
+  width: 200px;
+  height: 200px;
 }
 
 .background {
   background-color: black;
   height: 100%;
+  /**Album images*/
+  /****end album images****/
 }
 .background .foreground-image {
   background-image: url("/images/testimg.png");
@@ -46,69 +57,35 @@ body, html {
   height: 100%;
   width: 50%;
 }
-
-.wrapper-grid {
+.background .wrapper-grid {
   display: grid;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
-
-.item-wrapper1 {
+.background .item-wrapper1 {
   grid-row: 2;
   grid-column: 3;
 }
-
-.item-wrapper2 {
+.background .item-wrapper2 {
   grid-row: 2;
   grid-column: 6;
 }
-
-.item-wrapper3 {
+.background .item-wrapper3 {
   grid-row: 3;
   grid-column: 3;
   width: 100px;
 }
-
-.item-wrapper4 {
+.background .item-wrapper4 {
   grid-column: 4;
   grid-row: 3;
   width: 100px;
 }
-
-.music-item {
+.background .music-item {
   width: 200px;
   height: 200px;
   align-self: center;
   object-fit: cover;
   grid-column: 1/-1;
-}
-
-.item1 {
-  background: white;
-  grid-row: 2;
-  grid-column: 5;
-}
-
-.item2 {
-  background: red;
-  grid-row: 2;
-  grid-column: 8;
-}
-
-.item3 {
-  background: blue;
-}
-
-.item4 {
-  background: blue;
-}
-
-.item5 {
-  background: blue;
-}
-
-.item6 {
-  background: blue;
 }
 
 /*# sourceMappingURL=picks.css.map */
