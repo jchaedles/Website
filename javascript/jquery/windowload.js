@@ -1,28 +1,13 @@
 "use strict";
 $(document).ready(function(){
-// 	var images = $("img");
-// 	// images.each(function(idx,img){
-// 	// 	img.style.visibility = 'hidden';
-// 	// });
-// 	let gallery = $('.gallery');
-// 	gallery[0].classList.addClass('hidden');
-// 	$(window).on("load", windowLoaded);
-
-// 	function windowLoaded(){
-// 		// gallery.slideDown('400', function() {
-// 		// 	console.log("gallery should b open");
-// 		// });
-// 			images.each(function(idx,img){
-// 				img.style.visibility = 'visible';
-// 			});
-// 	}
-// });
 
 
-/**Load images at once**********************/
+
+/*************Load images at once**********************/
 var gallery = document.querySelector(".gallery");
 var images = document.querySelectorAll("img");
 var loadSpinner = document.querySelector(".loader");
+
 
 for(let img of images){
 	img.style.visibility = 'hidden';
@@ -31,9 +16,7 @@ for(let img of images){
 loadSpinner.style.visibility = 'visible';
 var allLoaded = true;
 
-/**
-* Wait for images to load
-*/
+//wait 1500ms for images to load
 setTimeout(function(){
 	// alert(checkLoad(images));
 	// if all images loaded
@@ -67,26 +50,23 @@ function checkLoad(image_list){
 	return true;
 }
 
+
+let buttonPressed = false;
 /**
-* onclick for menu nav buttton
+* onclick w/ animation for menu nav buttton
 */
 function menuOnClick(){
-	// let navBar = document.querySelector("nav");
 
 	var nav = $("nav");
-	if(nav.isInViewport()){
-		console.log("IS IN VIEW");
+	if(!buttonPressed){
+		nav.animate({left: '15px'});
 		nav.animate({left: '-700px'});
+		buttonPressed = true;
 	}
-	else
-	{
-		console.log("not viewed");
+	else{
+		nav.animate({left: '0'});
+		buttonPressed = false;
 	}
-
-	this.addEventListener("click", function(){
-		//unanimate the button n shit;
-		nav.animate({left: '700px'});
-	});
 }
 $.fn.isInViewport = function() {
 	var elementTop = $(this).offset().top;
