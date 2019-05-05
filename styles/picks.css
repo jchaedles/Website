@@ -30,16 +30,12 @@ body, html {
   grid-template-rows: 100px repeat(auto-fill, minmax(100px, 1fr));
 }
 
-canvas {
-  width: 200px;
-  height: 200px;
-}
-
 .background {
   background-color: black;
   height: 100%;
   /**Album images*/
   /****end album images****/
+  /***bar graphs**/
 }
 .background .foreground-image {
   background-image: url("/images/testimg.png");
@@ -86,6 +82,12 @@ canvas {
   align-self: center;
   object-fit: cover;
   grid-column: 1/-1;
+}
+.background .pop-bar {
+  z-index: 3;
+  height: 300px;
+  grid-column: 1;
+  grid-row: 3/4;
 }
 
 /*# sourceMappingURL=picks.css.map */

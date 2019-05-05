@@ -34,10 +34,10 @@ body, html{
 	grid-template-rows: 100px repeat(auto-fill, minmax(100px, 1fr));
 }
 //bar grapho
-canvas{
-	width: 200px;
-	height: 200px;
-}
+// canvas{
+// 	width: 200px;
+// 	height: 200px;
+// }
 //grid
 .background{
 	background-color: black;
@@ -102,6 +102,16 @@ canvas{
 	// padding-left: 8px;
 	}
 /****end album images****/
+
+/***bar graphs**/
+.pop-bar{
+	z-index: 3;
+	height: 300px;
+	grid-column: 1;
+	grid-row: 3/4;
+}
+
+
 }
 
 // .item1{
