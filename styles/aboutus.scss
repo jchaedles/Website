@@ -1,0 +1,18 @@
+body{
+	padding: 0 0;
+	margin: 0 0;
+	height: 100vh;
+}
+.background{
+	background-color: black;
+	height: 100vh;
+
+	.foreground{
+		background-image: url("/images/testimg.png");
+		position: relative;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+	}
+}

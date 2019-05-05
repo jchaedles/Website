@@ -14,6 +14,14 @@ body {
   grid-template-columns: auto 1fr;
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.noselectactive {
+  outline: none;
+}
+
 .hidden {
   position: absolute;
   top: -9999px;

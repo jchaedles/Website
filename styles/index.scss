@@ -16,6 +16,18 @@ html, body{
 body{
     display: grid;
     grid-template-columns: auto 1fr;
+
+
+
+
+
+}
+//prevent white dotted outline on button click
+button::-moz-focus-inner {
+      border: 0;
+}
+.noselectactive{
+    outline: none;
 }
 
 .hidden{
