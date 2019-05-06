@@ -11,7 +11,7 @@ body, html {
 
 .chaedles-pick-quote {
   position: absolute;
-  top: 20px;
+  top: 5px;
   color: white;
   padding-left: 116px;
   transform: skew(-10deg, 7deg);
@@ -26,16 +26,18 @@ body, html {
   height: 100%;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: auto auto 200px 200px repeat(10, auto);
-  grid-template-rows: 100px repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: auto auto repeat(10, auto);
+  grid-template-rows: 100px repeat(auto-fill, minmax(200px, auto));
 }
 
 .background {
   background-color: black;
+  overflow-y: hidden;
   height: 100%;
   /**Album images*/
   /****end album images****/
   /***bar graphs**/
+  /**banner above bars*/
 }
 .background .foreground-image {
   background-image: url("/images/testimg.png");
@@ -57,24 +59,23 @@ body, html {
   display: grid;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
+  justify-content: center;
 }
-.background .item-wrapper1 {
+.background .music-item-wrapper-tl {
   grid-row: 2;
-  grid-column: 3;
+  grid-column: 1/span 1;
 }
-.background .item-wrapper2 {
+.background .music-item-wrapper-tr {
+  grid-column: 2/span 1;
   grid-row: 2;
-  grid-column: 6;
 }
-.background .item-wrapper3 {
+.background .music-item-wrapper-bl {
   grid-row: 3;
-  grid-column: 3;
-  width: 100px;
+  grid-column: 1;
 }
-.background .item-wrapper4 {
-  grid-column: 4;
+.background .music-item-wrapper-br {
   grid-row: 3;
-  width: 100px;
+  grid-column: 2;
 }
 .background .music-item {
   width: 200px;
@@ -98,9 +99,32 @@ body, html {
 .background .bar3 {
   grid-column: 8/9;
 }
-.background .bar-blue {
+.background .rock-bar-front {
   grid-column: 6/7;
-  z-index: 3;
+}
+.background .pop-bar-front {
+  grid-column: 7/8;
+  position: relative;
+  top: 85px;
+}
+.background .trap-bar-front {
+  grid-column: 8/9;
+  position: relative;
+  top: -80px;
+}
+.background .rock-top-banner {
+  grid-column: 6/7;
+  color: white;
+  align-self: center;
+  justify-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .background .item-wrapper4 {
+    grid-column: 2/span 1;
+    grid-row: 3;
+    width: 100px;
+  }
 }
 
 /*# sourceMappingURL=picks.css.map */

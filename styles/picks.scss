@@ -1,3 +1,8 @@
+//vars
+$albumWidth: 200px;
+$albumHeight: 200px;
+//endvars
+
 * {
 	box-sizing: inherit;
 }
@@ -10,7 +15,7 @@ body, html{
 }
 .chaedles-pick-quote{
 	position: absolute;
-	top: 20px;
+	top: 5px;
 	color: white;
 	//skew
 	padding-left: 116px;
@@ -29,18 +34,15 @@ body, html{
 	height: 100%;
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: auto auto 200px 200px repeat(10, auto);
-	// grid-template-columns: 80px repeat(12, auto);
-	grid-template-rows: 100px repeat(auto-fill, minmax(100px, 1fr));
+	grid-template-columns: auto auto repeat(10, auto);
+	grid-template-rows: 100px repeat(auto-fill, minmax($albumHeight, auto));
 }
-//bar grapho
-// canvas{
-// 	width: 200px;
-// 	height: 200px;
-// }
+
+
 //grid
 .background{
 	background-color: black;
+	overflow-y: hidden;//lmao help me
 	height: 100%;
 	
 	
@@ -64,42 +66,38 @@ body, html{
 			height: 100%;
 			width: 50%;
 		}
-}
+	}
 
 	/**Album images*/
 	.wrapper-grid{
 		display: grid;
 		padding: 0 0 0 0;
 		margin: 0 0 0 0;
+		justify-content: center;
 	}
-	.item-wrapper1{
+	.music-item-wrapper-tl{
 		grid-row: 2;
-		grid-column: 3;
-	}
-	.item-wrapper2{
-		grid-row: 2;
-		grid-column: 6;
-	}
-	.item-wrapper3{
-		grid-row: 3;
-		grid-column: 3;
+		grid-column: 1/span 1;
 
-		width: 100px;	
 	}
-	.item-wrapper4{
-		grid-column: 4;
+	.music-item-wrapper-tr{
+		grid-column: 2/span 1;
+		grid-row: 2;
+	}
+	.music-item-wrapper-bl{
 		grid-row: 3;
-		width: 100px;
+		grid-column: 1;
+	}
+	.music-item-wrapper-br{
+		grid-row: 3;
+		grid-column: 2;
 	}
 	.music-item{
-		width: 200px;
-		height: 200px;
-	// z-index: 2;
-	align-self: center;
-	object-fit: cover;
-	grid-column: 1/-1;
-
-	// padding-left: 8px;
+		width: $albumWidth;
+		height: $albumHeight;
+		align-self: center;
+		object-fit: cover;
+		grid-column: 1/-1;
 	}
 /****end album images****/
 
@@ -121,13 +119,46 @@ body, html{
 .bar3{
 	grid-column: 8/9;
 }
-.bar-blue{
+.rock-bar-front{
 	grid-column: 6/7;
-	// position: absolute;
-	z-index: 3;
-}
+		// position: absolute;
+	}
+	.pop-bar-front{
+		grid-column: 7/8;
+		position: relative;
+		top: 85px;
+	}
+	.trap-bar-front{
+		grid-column: 8/9;
+		position: relative;
+		top: -80px;
+	}
+	/**banner above bars*/
+	.rock-top-banner{
+		grid-column: 6/7;
+		color: white;
+		align-self: center;
+		justify-self: center;
+	}
 }
 
+
+//small res screens
+@media screen and (max-width: 1024px){
+	.background{
+		.item-wrapper4{
+			grid-column: 2/span 1;
+			grid-row: 3;
+			width: 100px;
+
+		}
+	}
+}
+
+//big boy screens
+@media screen and (min-width: 1025px){
+
+}
 // .item1{
 // 	background: white;
 // 	grid-row: 2;
