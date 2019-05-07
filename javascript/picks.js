@@ -1,16 +1,26 @@
-var popBar = document.querySelector(".pop-bar");
-var background = document.querySelector('.background');
+(function() {
+	//hide page until loader is done, 
+	//outside jquery bc fuck waiting for the page to load just to hide it
+	let mainBackground = document.querySelector('.background')
+	mainBackground.classList.add('hidden');
+	$(document).ready(function() {
+		/***Load Starter Page***/
+		// $('.loading-screen').removeClass('hidden');
+		let loadingScreen = document.querySelector('.loading-screen');
+		loadingScreen.classList.remove('hidden');
 
-background.style.backgroundColor = 'white';
-// alert(popBar);
+		let loaderButton = document.querySelector('.btn-load-page');
+		loaderButton.addEventListener('click', loadMainPage, false);
+		/***End Starter Page***/
 
-var ctx = popBar.getContext("2d");
-if(ctx !== null){
-	console.log("not null");
-	ctx.beginPath();
-	ctx.rect(20, 20, 150, 150);
-	ctx.fillStyle = "red";
-}
-else{
-	alert("null!");
-}
+		/***Start Picks page***/
+
+		/***End Picks page***/
+
+		/***functions***/
+		function loadMainPage(){
+			mainBackground.classList.remove('hidden');
+			loadingScreen.classList.add('hidden');
+		}
+	});
+})();

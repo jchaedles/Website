@@ -13,6 +13,14 @@ body, html{
 	height: 100%;
 	box-sizing: border-box;
 }
+
+/***Loading Screen***/
+.loading-screen{
+	
+	.vinyl-bg{
+
+	}
+}
 .chaedles-pick-quote{
 	color: white;
 	grid-row: 2;
@@ -184,33 +192,3 @@ body, html{
 		}
 	}
 }
-
-//big boy screens
-@media screen and (min-width: 1025px){
-
-}
-// .item1{
-// 	background: white;
-// 	grid-row: 2;
-// 	grid-column: 5;
-// }
-
-// .item2{
-// 	background: red;
-// 	grid-row: 2;
-// 	grid-column: 8; 
-// }
-
-// .item3{
-// 	background: blue;
-// }
-// .item4{
-// 	background: blue;
-// }
-
-// .item5{
-// 	background: blue;
-// }
-// .item6{
-// 	background: blue;
-
