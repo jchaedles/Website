@@ -11,7 +11,7 @@
 
 		let loaderButton = document.querySelector('.btn-load-page');
 		loaderButton.addEventListener('click', loadMainPage, false);
-		/***End Starter Page***/
+		/***End Starter Page***/	
 
 		/***Start Picks page***/
 
@@ -19,8 +19,18 @@
 
 		/***functions***/
 		function loadMainPage(){
+			// jqImg = $('.loading-screen');
 			mainBackground.classList.remove('hidden');
-			loadingScreen.classList.add('hidden');
+			let img = document.querySelector('.img-chaedles-picks');
+			let overlay = document.querySelector('.overlay');
+			// img.style.position = 'absolute';
+			loaderButton.style.animation = 'slideLeft 1s linear forwards';
+			overlay.style.animation = 'slideLeft 1s linear forwards';
+			img.style.animation = 'slideLeft 1s linear forwards';
+			// jqImg.add('hidden');
+			// jqImg.add()
+			// jqImg.animate({left: '-00px'});
+			// loadingScreen.classList.add('hidden');
 		}
 	});
 })();
