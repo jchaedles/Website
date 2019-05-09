@@ -1,6 +1,7 @@
 .hidden {
   position: absolute;
   left: -3000px;
+  top: -3000px;
 }
 
 /*# sourceMappingURL=rules.css.map */

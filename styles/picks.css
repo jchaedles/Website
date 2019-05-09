@@ -10,6 +10,34 @@ body, html {
 }
 
 /***Loading Screen***/
+.loading-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+}
+.loading-screen .vinyl-bg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column: 1/-1;
+  grid-row: 1/4;
+  background: url("/images/chaedles-picks.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.loading-screen .btn-load-page {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: center;
+  align-self: center;
+  width: 100px;
+  height: 70px;
+}
+
 .chaedles-pick-quote {
   color: white;
   grid-row: 2;
