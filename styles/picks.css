@@ -3,6 +3,7 @@
 }
 
 body, html {
+  background: black;
   padding: 0 0;
   margin: 0 0;
   height: 100%;
@@ -34,12 +35,6 @@ body, html {
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
-.loading-screen .btn-load-page {
-  margin-left: 32px;
-  z-index: 2;
-  color: white;
-  background-color: transparent;
-}
 .loading-screen .vinyl-bg {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -54,12 +49,17 @@ body, html {
   width: 100%;
 }
 .loading-screen .btn-load-page {
+  border-radius: 30px;
   grid-column: 2;
   grid-row: 3;
   justify-self: center;
   align-self: center;
   width: 100px;
   height: 70px;
+  margin-left: 32px;
+  z-index: 2;
+  color: white;
+  background-color: transparent;
 }
 
 @keyframes slideLeft {

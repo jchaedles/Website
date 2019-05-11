@@ -8,6 +8,7 @@ $albumHeight: 225px;
 }
 
 body, html{
+	background: black;
 	padding: 0 0;
 	margin: 0 0;
 	height: 100%;
@@ -42,12 +43,7 @@ body, html{
 		grid-row: 1/-1;
 
 	}
-	.btn-load-page{
-		margin-left: 32px;
-		z-index: 2;
-		color: white;
-		background-color: transparent;	
-	}
+	
 	.vinyl-bg{
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -67,6 +63,7 @@ body, html{
 	}
 
 	.btn-load-page{
+		border-radius: 30px;
 		grid-column: 2;
 		grid-row: 3;
 
@@ -75,6 +72,11 @@ body, html{
 
 		width: 100px;
 		height: 70px;
+
+		margin-left: 32px;
+		z-index: 2;
+		color: white;
+		background-color: transparent;
 	}
 	// @media only screen and (max-width: 1200px){
 	// 	position: relative;

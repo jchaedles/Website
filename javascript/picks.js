@@ -1,36 +1,57 @@
-(function() {
-	//hide page until loader is done, 
-	//outside jquery bc fuck waiting for the page to load just to hide it
-	let mainBackground = document.querySelector('.background')
-	mainBackground.classList.add('hidden');
-	$(document).ready(function() {
-		/***Load Starter Page***/
-		// $('.loading-screen').removeClass('hidden');
-		let loadingScreen = document.querySelector('.loading-screen');
-		loadingScreen.classList.remove('hidden');
+$(function() {
+	let mySite = function() {
 
-		let loaderButton = document.querySelector('.btn-load-page');
-		loaderButton.addEventListener('click', loadMainPage, false);
-		/***End Starter Page***/	
+		return {
+			mainBackground: $('div.background'),
+			loadingScreen: $('div.loading-screen'),
+			loaderButton: $('button.btn-load-page'),
 
-		/***Start Picks page***/
+			loadMainPage: function(){
+				mySite.loadingScreen.find('.img-chaedles-picks').animate({opacity: '0.0'}, "500");
+				mySite.loadingScreen.find('.overlay').animate({opacity: '0'}, 
+					{
+						duration: 500, 
+						// on complete, display main page
+						complete: function(){
+							mySite.mainBackground.css("opacity", "0");
+							mySite.loadingScreen.addClass('hidden');
+							mySite.mainBackground.animate(
+							{
+								opacity: '1'
+							},
+							{
+								duration: 350,
+							}
+							);
+						}
+					}
+				);
+				mySite.loaderButton.css("border", "none").animate(
+					{
+						opacity: '0'
+					},
+					{
+						duration: 500
+					});
 
-		/***End Picks page***/
 
-		/***functions***/
-		function loadMainPage(){
-			// jqImg = $('.loading-screen');
-			mainBackground.classList.remove('hidden');
-			let img = document.querySelector('.img-chaedles-picks');
-			let overlay = document.querySelector('.overlay');
-			// img.style.position = 'absolute';
-			loaderButton.style.animation = 'slideLeft 1s linear forwards';
-			overlay.style.animation = 'slideLeft 1s linear forwards';
-			img.style.animation = 'slideLeft 1s linear forwards';
-			// jqImg.add('hidden');
-			// jqImg.add()
-			// jqImg.animate({left: '-00px'});
-			// loadingScreen.classList.add('hidden');
-		}
-	});
-})();
+
+			// alert(mainBackground.classList);
+
+			}
+		};
+	}();
+function animationDone(){
+				mySite.loadingScreen.addClass("hidden");
+}
+/***Load Starter Page***/
+
+mySite.loaderButton.on('click', mySite.loadMainPage);
+/***End Starter Page***/	
+
+/***Start Picks page***/
+
+/***End Picks page***/
+
+
+});
