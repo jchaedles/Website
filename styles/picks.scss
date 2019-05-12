@@ -15,6 +15,20 @@ body, html{
 	box-sizing: border-box;
 }
 
+.test-overlay{
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(3,1fr);
+
+}
 /***Loading Screen***/
 .loading-screen{
 	position: static;
@@ -28,7 +42,7 @@ body, html{
 
 	/**img**/
 	.overlay{
-		background: rgba(0,0,0,0.4);
+		background: rgba(0,0,0,0.2);
 		grid-row: 1/-1;
 		grid-column: 1/-1;
 		height: 100%;
@@ -74,7 +88,7 @@ body, html{
 		height: 70px;
 
 		margin-left: 32px;
-		z-index: 2;
+		z-index: 31;
 		color: white;
 		background-color: transparent;
 	}
@@ -91,14 +105,13 @@ body, html{
 /***END LOADING SCREEN***/
 .chaedles-pick-quote{
 	color: white;
-	grid-row: 2;
+	grid-row: 1;
+	grid-column: 2;
 	padding-left: 15px;
 	//skew
 	// transform: skew(20deg, 10deg);
-	transform: skew(-10deg, 7deg);
-
-	font-family: 'Oleo Script', cursive;
-	font-size: 40px;
+	font-family: 'Lato', sans-serif;
+	font-size: 1.5em;
 
 	background: -webkit-linear-gradient(#eee, #333);
 	-webkit-background-clip: text;
@@ -116,7 +129,10 @@ body, html{
 
 //grid
 .background{
-	background-color: black;
+	background-image: url("/images/shelves.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	overflow-y: hidden;//lmao help me
 	height: 100%;
 	

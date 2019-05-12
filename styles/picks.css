@@ -10,6 +10,19 @@ body, html {
   box-sizing: border-box;
 }
 
+.test-overlay {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
 /***Loading Screen***/
 .loading-screen {
   position: static;
@@ -21,7 +34,7 @@ body, html {
   /**img**/
 }
 .loading-screen .overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   grid-row: 1/-1;
   grid-column: 1/-1;
   height: 100%;
@@ -57,7 +70,7 @@ body, html {
   width: 100px;
   height: 70px;
   margin-left: 32px;
-  z-index: 2;
+  z-index: 31;
   color: white;
   background-color: transparent;
 }
@@ -76,11 +89,11 @@ body, html {
 /***END LOADING SCREEN***/
 .chaedles-pick-quote {
   color: white;
-  grid-row: 2;
+  grid-row: 1;
+  grid-column: 2;
   padding-left: 15px;
-  transform: skew(-10deg, 7deg);
-  font-family: "Oleo Script", cursive;
-  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -95,7 +108,10 @@ body, html {
 }
 
 .background {
-  background-color: black;
+  background-image: url("/images/shelves.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow-y: hidden;
   height: 100%;
   /**Album images*/

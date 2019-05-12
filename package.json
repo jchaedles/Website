@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "sync": "browser-sync start --server --files \"*.html, styles/*.css, styles/*.scss, javascript/*.js, *.svg\" "
+    "sync": "browser-sync start --server --files \"*.html, styles/*.css, styles/*.scss, javascript/*.js, javascript/json_stuff/*.js, *.svg\" "
   },
   "repository": {
     "type": "git",
