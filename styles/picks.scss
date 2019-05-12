@@ -168,26 +168,61 @@ body, html{
 		grid-row: 3/span 1;
 		grid-column: 1/span 1;
 	}
-	.gallery-tl{
-		grid-column: 1;
-	}
-	.gallery-tr{
-		grid-column: 2;
-	}
-	.gallery-bl{
-		grid-row: 2;
-	}
-	.gallery-br{
-		grid-row: 2;
-		grid-column: 2;
-	}
-	.music-item{
+	
+	
+	.btn-album-overlay{
+		display: none;
+		background: transparent;
+		color: black;
+		border-radius: 5px;
+	}	
+	
+	.music-item-wrapper{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		position: relative;
+		top: 0;
+		left: 0;
 		width: $albumWidth;
 		height: $albumHeight;
-		align-self: center;
-		object-fit: cover;
-		border: 5px solid white;
+		text-align: center;
+
+		.music-item{
+			width: $albumWidth;
+			height: $albumHeight;
+
+			align-self: center;
+			object-fit: cover;
+
+			border: 5px solid white;
+		}
 	}
+
+	.music-item-wrapper:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0; left: 0;
+		background: rgba(black, 0.3);
+		opacity: 0;
+
+		transition: all 1s;
+		-webkit-transition: all 0.3s;
+	}
+	.music-item-wrapper:hover:after{
+		opacity: 1;
+	}
+	.music-item-wrapper:hover + .btn-album-overlay, .btn-album-overlay:hover{
+		display: block;
+		position: absolute;
+		margin-left: 90px;
+		margin-top: 90px;
+
+		content: "";
+	}
+
 	.wrapper-grid{
 		padding: 0 0 0 0;
 		margin: 0 0 0 0;
@@ -195,73 +230,13 @@ body, html{
 		
 		justify-content: center;
 	}
-	.music-item-wrapper-tl{
-		grid-row: 2;
-		grid-column: 1/span 1;
+	
 
-	}
-	.music-item-wrapper-tr{
-		grid-column: 2/span 1;
-		grid-row: 2;
-	}
-	.music-item-wrapper-bl{
-		grid-row: 3;
-		grid-column: 1;
-	}
-	.music-item-wrapper-br{
-		grid-row: 3;
-		grid-column: 2;
-	}
-
-	//single of the week
-	.single{
-		grid-column: 2;
-		padding-top: 150px;
-		grid-row: 3;
-	}
+	
 	/****end album images****/
 
 	/***bar graphs**/
-	.pop-bar{
-		z-index: 3;
-		height: 300px;
-		grid-column: 1;
-		grid-row: 3/4;
-	}
-
-	.bar1{
-		grid-column: 6/7;
-	}
-
-	.bar2{
-		grid-column: 7/8;
-	}
-	.bar3{
-		grid-column: 8/9;
-	}
-	.rock-bar-front{
-		grid-column: 6/7;
-		// position: absolute;
-	}
-	.pop-bar-front{
-		grid-column: 7/8;
-		position: relative;
-		top: 85px;
-	}
-	.trap-bar-front{
-		grid-column: 8/9;
-		position: relative;
-		top: -80px;
-	}
-	/**banner above bars*/
-	.top-banner{
-		color: white;
-		// grid-template-rows: 
-		grid-auto-flow: column;
-		display: inline-grid;
-		grid-column: 3;
-		grid-row: 1;
-	}
+	
 }
 
 

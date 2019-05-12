@@ -36,7 +36,6 @@ $(function() {
 
 
 
-			// alert(mainBackground.classList);
 
 			}
 		};
