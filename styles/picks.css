@@ -73,6 +73,7 @@ body, html {
   z-index: 31;
   color: white;
   background-color: transparent;
+  opacity: 0;
 }
 
 @keyframes slideLeft {
@@ -105,6 +106,13 @@ body, html {
   grid-gap: 10px;
   grid-template-columns: auto auto 1fr;
   grid-template-rows: 100px repeat(auto-fill, minmax(150px, auto));
+}
+
+.hide-ontop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .background {
@@ -155,13 +163,13 @@ body, html {
   position: relative;
   top: 0;
   left: 0;
-  width: 225px;
-  height: 225px;
+  width: 125px;
+  height: 125px;
   text-align: center;
 }
 .background .music-item-wrapper .music-item {
-  width: 225px;
-  height: 225px;
+  width: 125px;
+  height: 125px;
   align-self: center;
   object-fit: cover;
   border: 5px solid white;
@@ -184,8 +192,8 @@ body, html {
 .background .music-item-wrapper:hover + .btn-album-overlay, .background .btn-album-overlay:hover {
   display: block;
   position: absolute;
-  margin-left: 90px;
-  margin-top: 90px;
+  margin-left: calc(125px/2 - 25px);
+  margin-top: calc(125px/2 - 25px);
   content: "";
 }
 .background .wrapper-grid {

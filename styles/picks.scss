@@ -1,6 +1,6 @@
 //vars
-$albumWidth: 225px;
-$albumHeight: 225px;
+$albumWidth: 125px;
+$albumHeight: 125px;
 //endvars
 
 * {
@@ -91,6 +91,8 @@ body, html{
 		z-index: 31;
 		color: white;
 		background-color: transparent;
+
+		opacity: 0;
 	}
 	// @media only screen and (max-width: 1200px){
 	// 	position: relative;
@@ -127,6 +129,12 @@ body, html{
 }
 
 
+.hide-ontop{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
 //grid
 .background{
 	background-image: url("/images/shelves.jpg");
@@ -217,8 +225,10 @@ body, html{
 	.music-item-wrapper:hover + .btn-album-overlay, .btn-album-overlay:hover{
 		display: block;
 		position: absolute;
-		margin-left: 90px;
-		margin-top: 90px;
+		// margin-left: 90px;
+		// margin-top: 90px;
+		margin-left: calc(#{$albumWidth}/2 - 25px);
+		margin-top: calc(#{$albumHeight}/2 - 25px);
 
 		content: "";
 	}
