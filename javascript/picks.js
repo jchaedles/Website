@@ -82,9 +82,9 @@ $(function() {
 
 	mySite.loaderButton.animate({opacity: '1'}, 350);
 	mySite.loaderButton.on('click', mySite.loadMainPage);
-	mySite.output.onload = function(){
-		mySite.output.style.opactiy = 1;
-	}
+	// mySite.output.onload = function(){
+	// 	mySite.output.style.opactiy = 1;
+	// }
 	/***End Starter Page***/	
 
 	/***Start Picks page***/
@@ -118,7 +118,7 @@ $(function() {
 		mySite.initGallery(img, randImgPath);
 	}//end load gallery
 	mySite.initGallery(mySite.sotwImg, randImgPath);
-	mySite.displayText(sotw);
+	// mySite.displayText(sotw);
 
 
 // mySite.imageInit(document.images[1]);

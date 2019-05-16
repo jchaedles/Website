@@ -1,6 +1,6 @@
 //vars
-$albumWidth: 130px;
-$albumHeight: 130px;
+$albumWidth: 200px;
+$albumHeight: 200px;
 //endvars
 
 * {
@@ -19,7 +19,7 @@ body, html{
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 9;
+	z-index: -1;
 	height: 100%;
 	width: 100%;
 
@@ -30,7 +30,6 @@ body, html{
 }
 /***Loading Screen***/
 .loading-screen{
-	position: static;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -113,25 +112,9 @@ body, html{
 	grid-template-rows: repeat(6, 1fr);
 }
 
-#SOTW{
-	width: 300px;
-	height: 300px;
 
-	background: url(/images/loading.gif) 50% no-repeat;
+	
 
-	margin: 0;
-
-	padding: 0;
-
-	grid-row: 3/4;
-	grid-column: 3/4;
-
-	border-radius: 15px 80px;
-
-
-
-
-}	
 .background{
 	height: 100%;
 	width: 100%;
@@ -144,17 +127,19 @@ body, html{
 
 	/**Album images*/
 	.gallery{
-		margin-top: 20px;
-		margin-left: 40px;
-		grid-row: 1/-1;
+		width: 400;
+		height: auto;
+
+		// margin-top: 40px;
+		// margin-left: 40px;
+		// margin-bottom: 20px;
+
 		display: grid;
-		width: 400px;
-		height: 700px;
+		grid-template-columns: repeat(2, $albumWidth);
+		grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
 		grid-row-gap: 35px;
 		grid-column-gap: 20px;
-		grid-template-columns: repeat(2, $albumWidth);
-		grid-template-rows: repeat(4, minmax(100px, #{$albumHeight}));
-		// grid-template-rows: auto;
+		grid-row: 1/-1;
 	}
 
 	.gallery-img{
@@ -172,7 +157,22 @@ body, html{
 
 
 	}
+	
+	#SOTW{
+	width: 300px;
+	height: 300px;
 
+	background: url(/images/loading.gif) 50% no-repeat;
+
+	margin: 0;
+
+	padding: 0;
+
+	grid-row: 3/4;
+	grid-column: 3/4;
+
+	border-radius: 15px 80px;
+	}
 	.sotw-output{
 		display: grid;
 		justify-content: start;
@@ -258,16 +258,38 @@ body, html{
 .v2{
 	grid-row: span 2;
 }
-//small res screens
-@media screen and (max-width: 1024px){
-	.background{
-		.item-wrapper4{
-			grid-column: 2/span 1;
-			grid-row: 3;
-			width: 100px;
 
-		}
+
+//small res screens
+@media screen and (max-height: 800px){
+
+	.grid{
+		grid-template-columns: auto 1fr; 
+
 	}
+	.background{
+		.gallery{
+			margin-left: 20px;
+			grid-template-columns: repeat(2, minmax(100px, 150px));
+			grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+			grid-gap: 10px;	
+			width: 430px;
+			align-items: center;
+		}
+		.gallery-img{
+		width: 150px;
+		height: 150px;
+	}
+		#SOTW{
+		grid-column: 2/3;
+		justify-self: center;
+		}
+		// .gallery-img{
+		// 	width: 115px;
+		// 	height: 115px;
+		// }
+	}
+
 }
 
 @keyframes fadeIn{
