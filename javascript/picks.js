@@ -8,6 +8,8 @@ $(function() {
 			mainBackground: $('div.background'),
 			loadingScreen: $('div.loading-screen'),
 			loaderButton: $('button.btn-load-page'),
+			sotwImg: document.getElementById('SOTW'),
+			output: document.getElementById('sotw'),
 
 			initGallery: function(img, imgSrc){
 					let dynamicImg = new Image();
@@ -60,6 +62,9 @@ $(function() {
 			waitLoadButton: function() {
 				loaderButton.removeClass('hidden');
 				alert(loaderButton);
+			},
+			displayText(text){
+				mySite.output.innerHTML = text;
 			}
 		};
 	}();
@@ -77,15 +82,43 @@ $(function() {
 
 	mySite.loaderButton.animate({opacity: '1'}, 350);
 	mySite.loaderButton.on('click', mySite.loadMainPage);
+	mySite.output.onload = function(){
+		mySite.output.style.opactiy = 1;
+	}
 	/***End Starter Page***/	
 
 	/***Start Picks page***/
-	mySite.initGallery(document.getElementById("SOTW"), "/images/reptillia.jpg");
+	// mySite.initGallery(document.getElementById("SOTW"), "/images/reptillia.jpg");
 	// load gallery
-	let gallery = Array.from(document.images).slice(1,9);
+	let gallery = Array.from(document.images).slice(1,(document.images.length-1));
+	let randNum = 0;
+	let randImgPath = "/";
+	let sotw = "";
+	//random img grab for all img in gallery
 	for (let img of gallery) {
-		mySite.initGallery(img, "/images/Divine_Feminine.png");
+		randNum = Math.floor((Math.random()*4));
+		switch(randNum){
+			case 0:
+				randImgPath = "/images/Divine_Feminine.png";
+				sotw = "Divine Feminine - Mac Miller";
+				break;
+			case 1:
+				randImgPath = "/images/reptillia.jpg";
+				sotw = "Reptillia - The Strokes";
+				break;
+			case 2: 
+				randImgPath = "/images/BostonBoston.jpg";
+				sotw = "Boston - Boston";
+				break;
+			case 3:
+				randImgPath = "/images/SgtPepper-1.jpg";
+				sotw = "Sgt. Pepper Lonley Hearts Club Band";
+				break;
+		}
+		mySite.initGallery(img, randImgPath);
 	}//end load gallery
+	mySite.initGallery(mySite.sotwImg, randImgPath);
+	mySite.displayText(sotw);
 
 
 // mySite.imageInit(document.images[1]);

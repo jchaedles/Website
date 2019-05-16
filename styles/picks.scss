@@ -1,6 +1,6 @@
 //vars
-$albumWidth: 125px;
-$albumHeight: 125px;
+$albumWidth: 130px;
+$albumHeight: 130px;
 //endvars
 
 * {
@@ -12,7 +12,6 @@ body, html{
 	padding: 0 0;
 	margin: 0 0;
 	height: 100%;
-	box-sizing: border-box;
 }
 
 .test-overlay{
@@ -107,7 +106,7 @@ body, html{
 /***END LOADING SCREEN***/
 
 .grid{
-	height: 100%;
+	height: auto;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -126,6 +125,12 @@ body, html{
 
 	grid-row: 3/4;
 	grid-column: 3/4;
+
+	border-radius: 15px 80px;
+
+
+
+
 }	
 .background{
 	height: 100%;
@@ -134,18 +139,21 @@ body, html{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	overflow-y: hidden;//lmao help me
+	// overflow-y: hidden;//lmao help me
 	height: 100%;
 
 	/**Album images*/
 	.gallery{
-		grid-row: 1/5;
+		margin-top: 20px;
+		margin-left: 40px;
+		grid-row: 1/-1;
 		display: grid;
 		width: 400px;
-		padding-left: 15px;
-		grid-gap: 15px;
+		height: 700px;
+		grid-row-gap: 35px;
+		grid-column-gap: 20px;
 		grid-template-columns: repeat(2, $albumWidth);
-		grid-template-rows: repeat(auto-fill, minmax(100px, #{$albumHeight}));
+		grid-template-rows: repeat(4, minmax(100px, #{$albumHeight}));
 		// grid-template-rows: auto;
 	}
 
@@ -159,10 +167,22 @@ body, html{
 
 		background: url(/images/loading.gif) 50% no-repeat;
 		border: 1px solid grey;
-		border-radius: 2px;
+		border-radius: 15px;
 
 
 
+	}
+
+	.sotw-output{
+		display: grid;
+		justify-content: start;
+		align-content: end;
+		color: white;
+		grid-column: 3/4;
+		width: 1fr;
+    font-family: 'Dancing Script', cursive;
+    opacity: 0;
+    transition: opacity 1s;
 	}
 	.btn-album-overlay{
 		display: none;
@@ -235,6 +255,9 @@ body, html{
 }
 
 
+.v2{
+	grid-row: span 2;
+}
 //small res screens
 @media screen and (max-width: 1024px){
 	.background{
@@ -245,4 +268,9 @@ body, html{
 
 		}
 	}
+}
+
+@keyframes fadeIn{
+	from: {opacity: 0;}
+	to: {opacity: 1;}	
 }
