@@ -90,7 +90,7 @@ $(function() {
 	/***Start Picks page***/
 	// mySite.initGallery(document.getElementById("SOTW"), "/images/reptillia.jpg");
 	// load gallery
-	let gallery = Array.from(document.images).slice(1,(document.images.length-1));
+	let gallery = Array.from(document.images).slice(0,(document.images.length-1));
 	let randNum = 0;
 	let randImgPath = "/";
 	let sotw = "";
