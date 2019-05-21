@@ -94,6 +94,13 @@ body, html {
   grid-template-rows: repeat(6, 1fr);
 }
 
+.scrolling {
+  -webkit-animation: scrollAcross 30s linear infinite;
+  -moz-animation: scrollAcross 30s linear infinite;
+  -o-animation: scrollAcross 30s linear infinite;
+  animation: scrollAcross 30s linear infinite;
+}
+
 .background {
   height: 100%;
   width: 100%;
@@ -102,19 +109,47 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  /**Album images*/
+  /**Album images scrolling across screen*/
   /****end album images****/
   /***bar graphs**/
 }
+.background .gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.background .gallery-wrapper .bg-gallery {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("/images/background-gallery.png");
+  opacity: 0.5;
+  width: 300%;
+  height: 100%;
+}
 .background .gallery {
-  width: 400;
-  height: auto;
+  width: calc(200px * 2 + 40px);
+  height: calc(100vh - 50px);
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(2, 200px);
   grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
   grid-row-gap: 35px;
   grid-column-gap: 20px;
   grid-row: 1/-1;
+}
+.background #scrolling-overlay {
+  width: 2000px;
+  height: 100vh;
+  overflow: hidden;
+}
+.background .test-div {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  background: blue;
 }
 .background .gallery-img {
   margin: 0;
@@ -135,6 +170,7 @@ body, html {
   grid-row: 3/4;
   grid-column: 3/4;
   border-radius: 15px 80px;
+  z-index: 2;
 }
 .background .sotw-output {
   display: grid;
@@ -224,6 +260,42 @@ body, html {
   .background #SOTW {
     grid-column: 2/3;
     justify-self: center;
+  }
+}
+@-webkit-keyframes scrollAcross {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(1913px, 0, 0);
+    /* The image width */
+  }
+}
+@-moz-keyframes scrollAcross {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(1913px, 0, 0);
+    /* The image width */
+  }
+}
+@-o-keyframes scrollAcross {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(1913px, 0, 0);
+    /* The image width */
+  }
+}
+@keyframes scrollAcross {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(1913px, 0, 0);
+    /* The image width */
   }
 }
 @keyframes fadeIn {

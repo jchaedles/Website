@@ -9,9 +9,9 @@ $(function() {
 			loadingScreen: $('div.loading-screen'),
 			loaderButton: $('button.btn-load-page'),
 			sotwImg: document.getElementById('SOTW'),
-			output: document.getElementById('sotw'),
+			output: document.getElementById('sotw-out'),
 
-			initGallery: function(img, imgSrc){
+			initGalleryImg: function(img, imgSrc){
 					let dynamicImg = new Image();
 					dynamicImg.onload = function() {
 						img.src = this.src;
@@ -65,6 +65,20 @@ $(function() {
 			},
 			displayText(text){
 				mySite.output.innerHTML = text;
+			},
+			initRandomGallery(gallery){
+				let randNum = 0;
+				let randImgPath = "/";
+				let sotw = "";
+				let albums = ["/images/Divine_Feminine.png", "/images/reptillia.jpg", "/images/BostonBoston.jpg", "/images/SgtPepper-1.jpg"];
+				//random img grab for all img in gallery
+				for (let img of gallery) {
+						randNum = Math.floor((Math.random()*4));
+					mySite.initGalleryImg(img, albums[randNum]);
+				}//end load gallery
+
+				mySite.initGalleryImg(mySite.sotwImg, albums[randNum]);
+				mySite.displayText(albums[randNum]);
 			}
 		};
 	}();
@@ -78,46 +92,22 @@ $(function() {
 
 
 
-	/***Load Starter Page***/
-
-	mySite.loaderButton.animate({opacity: '1'}, 350);
-	mySite.loaderButton.on('click', mySite.loadMainPage);
-	// mySite.output.onload = function(){
-	// 	mySite.output.style.opactiy = 1;
-	// }
-	/***End Starter Page***/	
+	
 
 	/***Start Picks page***/
-	// mySite.initGallery(document.getElementById("SOTW"), "/images/reptillia.jpg");
 	// load gallery
 	let gallery = Array.from(document.images).slice(0,(document.images.length-1));
-	let randNum = 0;
-	let randImgPath = "/";
-	let sotw = "";
-	//random img grab for all img in gallery
-	for (let img of gallery) {
-		randNum = Math.floor((Math.random()*4));
-		switch(randNum){
-			case 0:
-				randImgPath = "/images/Divine_Feminine.png";
-				sotw = "Divine Feminine - Mac Miller";
-				break;
-			case 1:
-				randImgPath = "/images/reptillia.jpg";
-				sotw = "Reptillia - The Strokes";
-				break;
-			case 2: 
-				randImgPath = "/images/BostonBoston.jpg";
-				sotw = "Boston - Boston";
-				break;
-			case 3:
-				randImgPath = "/images/SgtPepper-1.jpg";
-				sotw = "Sgt. Pepper Lonley Hearts Club Band";
-				break;
-		}
-		mySite.initGallery(img, randImgPath);
-	}//end load gallery
-	mySite.initGallery(mySite.sotwImg, randImgPath);
+	mySite.initRandomGallery(gallery);
+	// let randNum = 0;
+	// let randImgPath = "/";
+	// let sotw = "";
+	// let albums = ["/images/Divine_Feminine.png", "/images/reptillia.jpg", "/images/BostonBoston.jpg", "/images/SgtPepper-1.jpg"];
+	// //random img grab for all img in gallery
+	// for (let img of gallery) {
+	// 	randNum = Math.floor((Math.random()*4));
+	// 	mySite.initGalleryImg(img, albums[randNum]);
+	// }//end load gallery
+	// mySite.initGalleryImg(mySite.sotwImg, albums[randNum]);
 	// mySite.displayText(sotw);
 
 
