@@ -7,6 +7,19 @@ body, html {
   background: radial-gradient(ellipse at top, #e66465, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent), aliceblue;
 }
 
+.grid-c6r6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.grid-c3r3 {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
 .grid {
   overflow: hidden;
   height: 100%;
@@ -22,9 +35,14 @@ body, html {
 }
 .grid .row blockquote {
   font-family: "Bungee", cursive;
+  grid-row: span 2;
 }
 .grid .row h3 {
-  font-weight: 500;
+  font-weight: lighter;
+}
+.grid .row #present {
+  grid-row: 3;
+  grid-column: 2;
 }
 .grid article h1, .grid article h2, .grid article h3 {
   font-family: "Monoton";
